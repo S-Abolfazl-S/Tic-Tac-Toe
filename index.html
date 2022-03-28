@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tic-tac-toe, noughts and crosses, or Xs and Os is a paper-and-pencil game for two players who take turns marking the spaces in a three-by-three grid with X or O. The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row is the winner">
+    <meta name="author" content="S-Abolfazl-S">
+    <title>Tic Tac Toe</title>
+    <!-- CSS link's -->
+    <link type="text/css" media="all" rel="stylesheet" href="./src/style.css">
+</head>
+
+<body>
+    <div id="wrapper">
+        <section id="main-container">
+            <!--################################### game-c #################################-->
+            <div id="game-c">
+                <!--========================== start controls ===========================-->
+                <div class="controls">
+                    <div class="logo">
+                        <div class="cross"></div>
+                        <div class="circle"></div>
+                    </div>
+                    <div class="turn">
+                        <!-- <div class="cross"></div> -->
+                        <div class="circle"></div>
+                        <span>turn</span>
+                    </div>
+                    <div class="menu-btn">
+                        <div class="bars">
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                        </div>
+                    </div>
+                </div>
+                <!--========================== end controls ===========================-->
+                <!--========================== start board ===========================-->
+                <div class="board">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <!--========================== end board ===========================-->
+                <!--========================== start scores ===========================-->
+                <div class="scores">
+                    <div id="player-1" href="#">
+                        <span>x(you)</span>
+                        <span>14</span>
+                    </div>
+                    <div id="ties" href="#">
+                        <span>ties</span>
+                        <span>32</span>
+                    </div>
+                    <div id="player-2" href="#">
+                        <span>o(cpu)</span>
+                        <span>11</span>
+                    </div>
+                </div>
+                <!--========================== end scores ===========================-->
+
+            </div>
+            <!--################################### end game-c #################################-->
+            <!--################################### main-menu #################################-->
+            <!-- <div class="main-menu"></div> -->
+            <!--################################### end main-menu#################################-->
+        </section>
+    </div>
+
+    <!-- sound's -->
+    <audio id="board-btn" src="./assets/sounds/add_shape.wav" style="display: none;"></audio>
+    <audio id="menu-btn" src="./assets/sounds/btn_sound_effect.mp3" style="display: none;"></audio>
+    <!-- script's link's -->
+    <script type="text/javascript" src="src/script.js"></script>
+</body>
+
+</html>
