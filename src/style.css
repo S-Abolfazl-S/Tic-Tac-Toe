@@ -56,16 +56,186 @@ body {
 	justify-content: center;
 	align-items: center;
 }
+
+/* ################################### main-menu ################################## */
+
+#main-menu {
+	width: inherit;
+	height: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 10px 15px;
+	position: absolute;
+	top: 0;
+}
+
+#main-menu>section {
+	width: 100%;
+	height: auto;
+	/* border: 1px solid black; */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 10px;
+}
+
+/* =========================== logo =========================== */
+#main-menu>section>.logo {
+	width: auto;
+	height: auto;
+	display: flex;
+	align-items: center;
+}
+
+#main-menu>section>.logo :first-child {
+	margin-right: 5px;
+}
+
+/* =========================== /logo =========================== */
+/* =========================== pick player =========================== */
+section#pick-player {
+	height: 200px;
+	display: flex;
+	flex-direction: column;
+	border-radius: 10px;
+	padding: 0 10px;
+	background: var(--gunmetal-2);
+	box-shadow: 0 5px 0 #0F212B;
+	margin: 20px 0 40px 0;
+}
+
+section#pick-player>section {
+	width: 100%;
+	height: 40%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px;
+	background: var(--gunmetal);
+	border-radius: 10px;
+	overflow: hidden;
+	margin: 20px 0 10px 0;
+}
+
+section#pick-player>section>div {
+	width: 49%;
+	height: 100%;
+	border-radius: inherit;
+}
+
+section#pick-player>section>div>label {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+}
+
+section#pick-player input {
+	display: none;
+}
+
+section#pick-player h5,
+section#pick-player h3 {
+	color: var(--beau-blue);
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+section#pick-player h5 {
+	font-size: 13px;
+	color: #5e747f;
+}
+
+/* ~~~~~~~~~~~~~~~~~ select button ~~~~~~~~~~~~~~~~~~~~~~ */
+section#pick-player input:checked+div {
+	background: var(--beau-blue);
+}
+
+section#pick-player input:checked+div .cross::after,
+section#pick-player input:checked+div .cross::before {
+	background: var(--gunmetal);
+}
+
+section#pick-player input:checked+div .circle {
+	border-color: var(--gunmetal);
+}
+
+
+section#pick-player input:not(:checked)+div {
+	background: transparent;
+}
+
+/* ~~~~~~~~~~~~~~~~~ unselect button ~~~~~~~~~~~~~~~~~~~~~~ */
+section#pick-player input:not(:checked)+div .cross::after,
+section#pick-player input:not(:checked)+div .cross::before {
+	background: var(--beau-blue);
+}
+
+section#pick-player input:not(:checked)+div .circle {
+	border-color: var(--beau-blue);
+}
+
+/* =========================== /pick player =========================== */
+/* =========================== versus =========================== */
+#versus {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+#versus>button {
+	width: 100%;
+	height: 50px;
+	border-radius: 15px;
+	outline: none;
+	border: none;
+	margin-bottom: 20px;
+	cursor: pointer;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+#versus>button#vs-cpu {
+	background: var(--maximum-yellow-red);
+	box-shadow: 0 5px 0 #CB8D14;
+
+}
+
+#versus>button#vs-cpu:active {
+	box-shadow: none;
+	transform: translateY(5px);
+}
+
+#versus>button#vs-player {
+	background: var(--maximum-blue-green);
+	box-shadow: 0 5px 0 #138C87;
+
+}
+
+#versus>button#vs-player:active {
+	box-shadow: none;
+	transform: translateY(5px);
+}
+
+/* =========================== /versus =========================== */
+/* ################################### /main-menu ################################## */
+
 /* ################################### game-c ################################## */
 /* ========================== controls ============================ */
-#game-c > .controls {
+#game-c>.controls {
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-start;
 	padding: 30px 0;
 }
+
 /* ~~~~~~~~~~~~~~~~~~ logo ~~~~~~~~~~~~~~~~~~~~~ */
-#game-c > .controls > .logo {
+#game-c>.controls>.logo {
 	width: auto;
 	height: auto;
 	display: flex;
@@ -74,15 +244,17 @@ body {
 	/* background: white; */
 	/* padding: 0 2px 1px 0; */
 }
+
 /* ----------- pattern's ------------- */
 .circle {
-	width: 32px;
-	height: 32px;
+	width: 30px;
+	height: 30px;
 	display: block;
 	background: transparent;
-	border: 0.5em solid var(--maximum-yellow-red);
+	border: 0.55em solid var(--maximum-yellow-red);
 	border-radius: 50%;
 }
+
 .cross {
 	width: auto;
 	height: auto;
@@ -102,139 +274,179 @@ body {
 	transform: rotate(45deg);
 	background-color: var(--maximum-blue-green);
 }
+
 .cross::before {
 	z-index: 2;
 	position: absolute;
 	transform: rotate(135deg);
 }
+
 /* ----------- /pattern's ------------- */
 /* ~~~~~~~~~~~~~~~~~~ /logo ~~~~~~~~~~~~~~~~~~~~~ */
 
 /* ~~~~~~~~~~~~~~~~~~ turn ~~~~~~~~~~~~~~~~~~~~~ */
-#game-c > .controls > .turn {
+#game-c>.controls>.turn {
 	width: auto;
 	height: 2em;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	background: var(--gunmetal-2);
-	box-shadow: 0.15rem 0.15rem 0px var(--charleston-green);
-	transform: translate(-0.15rem, -0.15rem);
+	box-shadow: 0 0.15rem 0px #0E2128;
+	transform: translate(0, -0.15rem);
 	border-radius: 3px;
 	padding: 0.5em;
 	margin-right: 30px;
 }
+
 /* ----------- turn content ------------- */
-#game-c > .controls > .turn > .circle {
+#game-c>.controls>.turn>.circle {
 	border-color: var(--beau-blue);
 	width: 16px;
 	height: 16px;
 	font-size: 0.5em;
 }
-#game-c > .controls > .turn > .cross::after,
-#game-c > .controls > .turn > .cross::before {
+
+#game-c>.controls>.turn>.cross::after,
+#game-c>.controls>.turn>.cross::before {
 	background-color: var(--beau-blue);
 	width: 0.55em;
 	height: 0.12em;
 }
 
-#game-c > .controls > .turn span {
+#game-c>.controls>.turn span {
 	margin-left: 5px;
 	text-transform: uppercase;
 	color: var(--beau-blue);
 }
+
 /* ----------- /turn content ------------- */
 
 /* ~~~~~~~~~~~~~~~~~~ /turn ~~~~~~~~~~~~~~~~~~~~~ */
-/* ~~~~~~~~~~~~~~~~~~ menu-btn ~~~~~~~~~~~~~~~~~~~~~ */
-#game-c > .controls > .menu-btn {
+/* ~~~~~~~~~~~~~~~~~~ reset-btn ~~~~~~~~~~~~~~~~~~~~~ */
+#game-c>.controls>.reset-btn {
 	width: 2em;
 	height: 2em;
+	font-size: 16px;
 	justify-content: center;
 	align-items: center;
 	border: none;
 	cursor: pointer;
 	overflow: hidden;
-	box-shadow: 0.25rem 0.25rem 0 #000;
-	transform: translate(-0.25rem, -0.25rem);
+	box-shadow: 0 0.25rem 0 #738B95;
+	transform: translate(0, -0.25rem);
 	border-radius: 3px;
 }
 
-#game-c > .controls > .menu-btn > .bars {
+/* ~~~~~~~~~~~~~~~~~~ arrow redo icon ~~~~~~~~~~~~~~~~~~~~~ */
+/* parent box */
+.arrow-redo {
 	width: 100%;
 	height: 100%;
+	font-size: 2em;
+	background: var(--beau-blue);
 	display: flex;
-	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	background: var(--beau-blue);
-}
-#game-c > .controls > .menu-btn > .bars > .line {
-	width: 50%;
-	height: 0.1em;
-	margin: 2px;
-	border-radius: 50px;
-	background: var(--gunmetal);
+	position: relative;
+	border-radius: inherit;
+	transition: all .2s;
 }
 
-#game-c > .controls > .menu-btn:active {
+/* line */
+.arrow-redo::before {
+	content: '';
+	width: .4em;
+	height: .4em;
+	display: block;
+	border: .1em solid #fff;
+	border-color: var(--gunmetal) var(--gunmetal) var(--gunmetal) transparent;
+	border-radius: 50%;
+	transform: rotate(180deg);
+}
+
+/* triangle */
+.arrow-redo::after {
+	content: '';
+	width: auto;
+	height: auto;
+	font-size: .2em;
+	border: 1em solid transparent;
+	border-color: transparent transparent transparent var(--gunmetal);
+	transform: rotate(45deg);
+	position: absolute;
+	right: 0px;
+	top: 1.25em;
+}
+
+/* ~~~~~~~~~~~~~~~~~~ /arrow redo icon ~~~~~~~~~~~~~~~~~~~~~ */
+
+#game-c>.controls>.reset-btn:active {
 	box-shadow: 0 0 0 transparent;
 	transform: translate(0, 0);
 }
-/* ~~~~~~~~~~~~~~~~~~ /menu-btn ~~~~~~~~~~~~~~~~~~~~~ */
+
+/* ~~~~~~~~~~~~~~~~~~ /reset-btn ~~~~~~~~~~~~~~~~~~~~~ */
 /* ========================== /controls ============================ */
 /* ========================== board ============================ */
-#game-c > .board {
+#game-c>.board {
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: center;
 	align-items: stretch;
 }
-#game-c > .board > div {
+
+#game-c>.board>div {
 	flex-grow: 1;
 	flex-basis: calc(26% - 10px);
 	display: inline-flex;
 	justify-content: center;
 	align-items: center;
 	margin: 10px;
-	border-radius: 10px;
+	border-radius: 15px;
 	background: var(--gunmetal-2);
-	box-shadow: 0.25rem 0.25rem 0 #000;
-	transform: translate(-0.25rem, -0.25rem);
+	box-shadow: 0 0.5rem 0 #0E2128;
+	transform: translate(0, -0.5rem);
 	cursor: pointer;
 }
-#game-c .board > div:active {
+
+#game-c .board>div:active {
 	box-shadow: none;
 	transform: translate(0, 0);
 }
 
 /* fix margin of button's in board */
-#game-c > .board {
+#game-c>.board {
 	padding: 0.25rem 0 0 0.25rem;
 }
-#game-c > .board > :nth-child(1),
-#game-c > .board > :nth-child(2),
-#game-c > .board > :nth-child(3) {
+
+#game-c>.board> :nth-child(1),
+#game-c>.board> :nth-child(2),
+#game-c>.board> :nth-child(3) {
 	margin-top: 0;
 }
-#game-c > .board > :nth-child(7),
-#game-c > .board > :nth-child(8),
-#game-c > .board > :nth-child(9) {
+
+#game-c>.board> :nth-child(7),
+#game-c>.board> :nth-child(8),
+#game-c>.board> :nth-child(9) {
 	margin-bottom: 0;
 }
-#game-c > .board > :nth-child(3),
-#game-c > .board > :nth-child(6),
-#game-c > .board > :nth-child(9) {
+
+#game-c>.board> :nth-child(3),
+#game-c>.board> :nth-child(6),
+#game-c>.board> :nth-child(9) {
 	margin-right: 0;
 }
-#game-c > .board > :nth-child(1),
-#game-c > .board > :nth-child(4),
-#game-c > .board > :nth-child(7) {
+
+#game-c>.board> :nth-child(1),
+#game-c>.board> :nth-child(4),
+#game-c>.board> :nth-child(7) {
 	margin-left: 0px;
 }
+
 /* ========================== /board ============================ */
 /* ========================== scores ============================ */
-#game-c > .scores {
+#game-c>.scores {
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
@@ -242,7 +454,7 @@ body {
 	padding: 20px 2px 0 2px;
 }
 
-#game-c > .scores > div {
+#game-c>.scores>div {
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
@@ -254,17 +466,20 @@ body {
 	box-shadow: 0 0 5px #000;
 	padding: 10px;
 }
-#game-c > .scores > div > span:nth-child(2) {
+
+#game-c>.scores>div>span:nth-child(2) {
 	font-weight: bold;
 }
 
 #game-c .scores div:nth-child(1) {
 	background-color: var(--maximum-blue-green);
 }
+
 #game-c .scores div:nth-child(2) {
 	background-color: var(--beau-blue);
 	margin: 0 20px;
 }
+
 #game-c .scores div:nth-child(3) {
 	background-color: var(--maximum-yellow-red);
 }
@@ -272,17 +487,174 @@ body {
 /* ========================== /scores ============================ */
 /* ################################### /game-c ################################## */
 
+/* ################################### reset-pane ################################## */
+#reset-pane {
+	position: absolute;
+	width: 100vw;
+	height: 200px;
+	background: #1F3540;
+	/* display: flex; */
+	display: none;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+#reset-pane h1 {
+	color: var(--beau-blue);
+	font-size: 1.5rem;
+	text-transform: uppercase;
+}
+
+#reset-pane div {
+	width: auto;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	margin-top: 20px;
+	padding: 0 10px;
+	flex-wrap: wrap;
+}
+
+#reset-pane button {
+	outline: none;
+	border: none;
+	flex-grow: 1;
+	padding: 10px;
+	margin: 5px;
+	background-color: var(--beau-blue);
+	border-radius: 10px;
+	box-shadow: 0 5px 0 #637E89;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	cursor: pointer;
+	font-weight: bold;
+}
+
+
+#reset-pane button#reset {
+	background-color: var(--maximum-yellow-red);
+}
+
+#reset-pane button#reset:not(:active) {
+	background-color: var(--maximum-yellow-red);
+	box-shadow: 0 5px 0 #AC842F;
+}
+
+#reset-pane button#home {
+	background-color: var(--maximum-blue-green);
+}
+
+#reset-pane button#home:not(:active) {
+	background-color: var(--maximum-blue-green);
+	box-shadow: 0 5px 0 #22817D;
+}
+
+#reset-pane button:active {
+	box-shadow: none;
+	transform: translateY(5px);
+}
+
+/* ################################### /reset-pane ################################## */
+/* ################################### win-state-pane ################################## */
+#win-state-pane {
+	position: absolute;
+	width: 100vw;
+	height: 200px;
+	background: #1F3540;
+	display: none;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+#win-state-pane p {
+	width: 100%;
+	text-align: center;
+	text-transform: uppercase;
+	color: var(--beau-blue);
+	font-size: .8rem;
+	font-weight: bold;
+}
+
+#win-state-pane> :nth-child(2) {
+	width: 100%;
+	height: 20%;
+	display: flex;
+	justify-content: center;
+	align-items: center; 
+	margin: 20px 0;
+	text-transform: uppercase;
+}
+
+#win-state-pane> :nth-child(2) h1 {
+	font-size: 1.5rem;
+	color: var(--maximum-blue-green);
+}
+
+#win-state-pane> :nth-child(2) div {
+	margin-right: 5px;
+}
+
+#win-state-pane> :nth-child(3) {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0 5px;
+}
+
+#win-state-pane> :nth-child(3) button:first-child {
+	margin-right: 10px;
+}
+
+#win-state-pane> :nth-child(3) button {
+	width: auto;
+	height: 100%;
+	text-transform: uppercase;
+	border: none;
+	outline: none;
+	padding: 10px 8px;
+	cursor: pointer;
+	border-radius: 10px;
+	font-weight: bold;
+}
+
+#win-state-pane> :nth-child(3) button:nth-child(1) {
+	background: var(--beau-blue);
+	box-shadow: 0 5px 0 #6F8A93;
+}
+
+#win-state-pane> :nth-child(3) button:nth-child(2) {
+	background: var(--maximum-yellow-red);
+	box-shadow: 0 5px 0 #9E813B;
+}
+
+#win-state-pane> :nth-child(3) button:nth-child(1):active {
+	box-shadow: none;
+	transform: translateY(5px);
+}
+
+#win-state-pane> :nth-child(3) button:nth-child(2):active {
+	box-shadow: none;
+	transform: translateY(5px);
+}
+
+
+/* ################################### /win-state-pane ################################## */
+
 /* ################################### MEDIA QUERY ################################## */
-/* ========================= portrait mode ============================= */
+/* ========================= portrait mode ============================= */ 
 @media only all and (min-width: 0px) {
 	#wrapper {
 		width: 100%;
 		height: 100vh;
-		background: yellow;
+		/* background: yellow; */
 		display: flex;
 		justify-content: center;
 		align-items: center;
 	}
+
 	#main-container {
 		width: inherit;
 		height: inherit;
@@ -290,97 +662,99 @@ body {
 		justify-content: center;
 		align-items: center;
 		/* padding-right: 3px; */
+		/* border: 2px dashed red; */
 	}
+
+	/* ~~~~~~~~~~~~~~~~~~ main-menu ~~~~~~~~~~~~~~~~~~~~~ */
+	#main-menu {
+		position: relative;
+	}
+
+	/* ~~~~~~~~~~~~~~~~~~ /main-menu ~~~~~~~~~~~~~~~~~~~~~ */
 	/* ~~~~~~~~~~~~~~~~~~ game-c ~~~~~~~~~~~~~~~~~~~~~ */
 	#game-c {
 		width: inherit;
 		height: inherit;
-		display: flex;
+		display: none;
 		justify-content: center;
 		align-items: center;
 		flex-direction: column;
 		overflow: hidden;
 		padding: 0 5px;
 	}
-	/* #game-c > .board > * {
-		width: 33%;
-		height: 33%;
-		background: #000;
-		display: none;
-	} */
 
-	#game-c > * {
-		/* border: 2px solid #000; */
-	}
-
-	#game-c > .controls,
-	#game-c > .scores {
+	#game-c>.controls,
+	#game-c>.scores {
 		width: 100%;
 		height: 10%;
 		flex-grow: 1;
 	}
 
-	#game-c > .board {
+	#game-c>.board {
 		width: 100%;
 		height: 100vw;
 		flex-grow: 0;
-		/* flex-wrap: wrap;
-		display: flex;
-		flex-direction: row;
-		justify-content: center;
-		align-items: center; */
 	}
+
 	/* ~~~~~~~~~~~~~~~~~~ end game-c ~~~~~~~~~~~~~~~~~~~~~ */
 }
 
 @media only all and (max-width: 260px) {
-	#game-c > .controls > .logo {
+	#game-c>.controls>.logo {
 		display: none;
 	}
-	
-	#game-c > .scores {
+
+	#game-c>.scores {
 		flex-direction: column;
 		justify-content: flex-start;
 		align-content: space-between;
-	} 
+	}
 
-	#game-c > .scores > div:nth-child(2) {
+	#game-c>.scores>div:nth-child(2) {
 		margin: 10px 0;
 	}
 }
 
 @media only all and (min-width: 350px) and (max-width: 400px) {
-	#game-c > .controls {
-		padding-top: 10px;
+	#game-c>.controls {
+		padding-top: 30px;
 	}
-	#game-c > .scores {
+
+	#game-c>.scores {
 		padding: 0;
 		padding-bottom: 10px;
 	}
-	#game-c > .board {
-		margin: 10px 0;
+
+	#game-c>.board {
+		margin: 20px 0;
 	}
 }
 
-@media only all and (min-width: 400px), (min-width: 1200px) {
+@media only all and (min-width: 400px),
+(min-width: 1200px) {
 	#wrapper {
-		background: pink;
+		/* background: pink; */
 	}
+
 	#main-container {
 		width: 400px;
 	}
+
 	/* ~~~~~~~~~~~~~~~~~~ game-c ~~~~~~~~~~~~~~~~~~~~~ */
 	#game-c {
 		width: 100%;
 		padding: 0;
 	}
-	#game-c > .controls {
+
+	#game-c>.controls {
 		align-items: flex-end;
 	}
-	#game-c > .controls > .turn {
+
+	#game-c>.controls>.turn {
 		width: 26%;
 	}
-	#game-c > .board {
+
+	#game-c>.board {
 		width: 100%;
 		height: 400px;
 	}
@@ -390,15 +764,24 @@ body {
 
 /* ========================= landscape mode ============================= */
 @media only all and (orientation: landscape) and (min-width: 600px) and (max-width: 850px),
-	(min-width: 600px) and (max-height: 560px),
-	(max-height: 450px) {
+(min-width: 600px) and (max-height: 560px),
+(max-height: 450px) {
 	#wrapper {
-		background: azure;
+		/* background: azure; */
 	}
+
 	#main-container {
 		width: 100%;
 		height: 80vh;
 	}
+
+	/* ~~~~~~~~~~~~~~~~~~ main-menu ~~~~~~~~~~~~~~~~~~~~~ */
+	#main-menu {
+		width: 400px;
+		position: absolute;
+	}
+
+	/* ~~~~~~~~~~~~~~~~~~ /main-menu ~~~~~~~~~~~~~~~~~~~~~ */
 	/* ~~~~~~~~~~~~~~~~~~ game-c ~~~~~~~~~~~~~~~~~~~~~ */
 	#game-c {
 		width: 100%;
@@ -406,8 +789,8 @@ body {
 		padding: 0 20px;
 	}
 
-	#game-c > .controls,
-	#game-c > .scores {
+	#game-c>.controls,
+	#game-c>.scores {
 		width: 10%;
 		height: 100%;
 		flex-direction: column-reverse;
@@ -416,11 +799,11 @@ body {
 		padding: 3px 0;
 	}
 
-	#game-c > .controls > .menu-btn {
+	#game-c>.controls>.reset-btn {
 		margin-top: 2px;
 	}
 
-	#game-c > .controls > .turn {
+	#game-c>.controls>.turn {
 		width: auto;
 		height: auto;
 		margin: 0;
@@ -430,21 +813,21 @@ body {
 		flex-wrap: wrap;
 	}
 
-	#game-c > .scores {
+	#game-c>.scores {
 		align-items: stretch;
 		padding-right: 20px;
 	}
 
-	#game-c > .scores > div {
+	#game-c>.scores>div {
 		max-width: 100px;
 		padding: 0 10px;
 	}
 
-	#game-c > .scores > div:nth-child(2) {
+	#game-c>.scores>div:nth-child(2) {
 		margin: 20px 0;
 	}
 
-	#game-c > .board {
+	#game-c>.board {
 		width: 80vh;
 		height: 100%;
 		margin: 0 10px;
@@ -454,23 +837,25 @@ body {
 }
 
 @media only all and (orientation: landscape) and (min-width: 850px) and (max-width: 1024px) and (max-height: 560px),
-	(min-width: 750px) and (max-height: 560px) {
+(min-width: 750px) and (max-height: 560px) {
 	#wrapper {
 		background: var(--gunmetal);
-		background: greenyellow;
+		/* background: greenyellow; */
 	}
+
 	#main-container {
 		width: 100%;
 		height: 95vh;
 	}
+
 	/* ~~~~~~~~~~~~~~~~~~ game-c ~~~~~~~~~~~~~~~~~~~~~ */
 	#game-c {
 		width: 100%;
 		flex-direction: row;
 	}
 
-	#game-c > .controls,
-	#game-c > .scores {
+	#game-c>.controls,
+	#game-c>.scores {
 		width: auto;
 		height: 100%;
 		flex-direction: column-reverse;
@@ -478,31 +863,31 @@ body {
 		padding: 3px 0;
 	}
 
-	#game-c > .controls > .menu-btn {
+	#game-c>.controls>.reset-btn {
 		margin-top: 2px;
 	}
 
-	#game-c > .controls > .turn {
+	#game-c>.controls>.turn {
 		width: auto;
 		margin: 0;
 		margin-left: 10px;
 	}
 
-	#game-c > .scores {
+	#game-c>.scores {
 		align-items: stretch;
 		padding-right: 20px;
 	}
 
-	#game-c > .scores > div {
+	#game-c>.scores>div {
 		max-width: 150px;
 		padding: 0 10px;
 	}
 
-	#game-c > .scores > div:nth-child(2) {
+	#game-c>.scores>div:nth-child(2) {
 		margin: 20px 0;
 	}
 
-	#game-c > .board {
+	#game-c>.board {
 		width: 95vh;
 		height: 100%;
 		margin: 0 20px;
@@ -510,4 +895,5 @@ body {
 
 	/* ~~~~~~~~~~~~~~~~~~ end game-c ~~~~~~~~~~~~~~~~~~~~~ */
 }
+
 /* ################################### END MEDIA QUERY ################################## */

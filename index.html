@@ -10,6 +10,9 @@
     <title>Tic Tac Toe</title>
     <!-- CSS link's -->
     <link type="text/css" media="all" rel="stylesheet" href="./src/style.css">
+    <!-- fix error: http /favicon.ico 404 (Not Found) -->
+    <link rel="shortcut icon" href="#">
+
 </head>
 
 <body>
@@ -24,16 +27,11 @@
                         <div class="circle"></div>
                     </div>
                     <div class="turn">
-                        <!-- <div class="cross"></div> -->
-                        <div class="circle"></div>
+                        <div class="cross"></div> 
                         <span>turn</span>
                     </div>
-                    <div class="menu-btn">
-                        <div class="bars">
-                            <div class="line"></div>
-                            <div class="line"></div>
-                            <div class="line"></div>
-                        </div>
+                    <div class="reset-btn">
+                        <div class="arrow-redo"></div>
                     </div>
                 </div>
                 <!--========================== end controls ===========================-->
@@ -54,30 +52,83 @@
                 <div class="scores">
                     <div id="player-1" href="#">
                         <span>x(you)</span>
-                        <span>14</span>
+                        <span>0</span>
                     </div>
                     <div id="ties" href="#">
                         <span>ties</span>
-                        <span>32</span>
+                        <span>0</span>
                     </div>
                     <div id="player-2" href="#">
                         <span>o(cpu)</span>
-                        <span>11</span>
+                        <span>0</span>
                     </div>
                 </div>
                 <!--========================== end scores ===========================-->
 
             </div>
-            <!--################################### end game-c #################################-->
             <!--################################### main-menu #################################-->
-            <!-- <div class="main-menu"></div> -->
-            <!--################################### end main-menu#################################-->
+            <div id="main-menu">
+                <section>
+                    <div class="logo">
+                        <div class="cross"></div>
+                        <div class="circle"></div>
+                    </div>
+                </section>
+                <!--  -->
+                <section id="pick-player">
+                    <h3>pick player 1's mark</h3>
+                    <section>
+                        <input type="radio" id="px" name="pp">
+                        <div class="px">
+                            <label for="px">
+                                <div class="cross"></div>
+                            </label>
+                        </div>
+                        <!--  -->
+                        <input type="radio" id="po" name="pp" checked>
+                        <div class="po">
+                            <label for="po">
+                                <div class="circle"></div>
+                            </label>
+                        </div>
+                    </section>
+                    <h5>remember : x goes first</h5>
+                </section>
+                <!--  -->
+                <section id="versus">
+                    <button id="vs-cpu">new game (vs cpu)</button>
+                    <button id="vs-player">new game (vs player)</button>
+                </section>
+            </div>
+        </section>
+        <!--################################## reset-pane ##################################-->
+        <section id="reset-pane" >
+            <h1>restart game ?</h1>
+            <div>
+                <button id="cancel">no, cancel</button>
+                <button id="reset">yes, reset</button>
+                <button id="home">home</button>
+            </div>
+        </section>
+        <!--################################## win state pane ##################################-->
+        <section id="win-state-pane">
+            <p>you won!</p>
+            <div>
+                <div class="cross"></div>
+                <h1>takes the round</h1>
+            </div>
+            <div>
+                <button>quit</button>
+                <button>next round</button>
+            </div>
         </section>
     </div>
 
     <!-- sound's -->
-    <audio id="board-btn" src="./assets/sounds/add_shape.wav" style="display: none;"></audio>
-    <audio id="menu-btn" src="./assets/sounds/btn_sound_effect.mp3" style="display: none;"></audio>
+    <audio id="press-btn1-audio" src="./assets/sounds/press_btn_1.wav" style="display: none;"></audio>
+    <audio id="press-btn2-audio" src="./assets/sounds/press_btn_2.mp3" style="display: none;"></audio>
+    <audio id="press-btn3-audio" src="./assets/sounds/press_btn_3.mp3" style="display: none;"></audio>
+    <audio id="win-state-audio" src="./assets/sounds/win_state.wav" style="display: none;"></audio>
     <!-- script's link's -->
     <script type="text/javascript" src="src/script.js"></script>
 </body>
