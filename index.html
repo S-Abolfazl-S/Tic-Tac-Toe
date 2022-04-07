@@ -27,7 +27,7 @@
                         <div class="circle"></div>
                     </div>
                     <div class="turn">
-                        <div class="cross"></div> 
+                        <div class="cross"></div>
                         <span>turn</span>
                     </div>
                     <div class="reset-btn">
@@ -37,30 +37,30 @@
                 <!--========================== end controls ===========================-->
                 <!--========================== start board ===========================-->
                 <div class="board">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
+                    <div id="1"></div>
+                    <div id="2"></div>
+                    <div id="3"></div>
+                    <div id="4"></div>
+                    <div id="5"></div>
+                    <div id="6"></div>
+                    <div id="7"></div>
+                    <div id="8"></div>
+                    <div id="9"></div>
                 </div>
                 <!--========================== end board ===========================-->
                 <!--========================== start scores ===========================-->
                 <div class="scores">
                     <div id="player-1" href="#">
                         <span>x(you)</span>
-                        <span>0</span>
+                        <span>00</span>
                     </div>
                     <div id="ties" href="#">
                         <span>ties</span>
-                        <span>0</span>
+                        <span>00</span>
                     </div>
                     <div id="player-2" href="#">
                         <span>o(cpu)</span>
-                        <span>0</span>
+                        <span>00</span>
                     </div>
                 </div>
                 <!--========================== end scores ===========================-->
@@ -102,7 +102,7 @@
             </div>
         </section>
         <!--################################## reset-pane ##################################-->
-        <section id="reset-pane" >
+        <section id="reset-pane">
             <h1>restart game ?</h1>
             <div>
                 <button id="cancel">no, cancel</button>
@@ -118,10 +118,14 @@
                 <h1>takes the round</h1>
             </div>
             <div>
-                <button>quit</button>
-                <button>next round</button>
+                <button id="quit">quit</button>
+                <button id="next">next round</button>
             </div>
         </section>
+        <!-- msg full screen mode -->
+        <div class="msgBox">
+            press on logo for full screen mode
+        </div>
     </div>
 
     <!-- sound's -->

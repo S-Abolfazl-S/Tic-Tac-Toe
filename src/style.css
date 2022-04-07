@@ -47,6 +47,7 @@ body {
 	justify-content: center;
 	align-items: center;
 	background-color: var(--gunmetal);
+	position: relative;
 }
 
 #main-container {
@@ -60,9 +61,9 @@ body {
 /* ################################### main-menu ################################## */
 
 #main-menu {
+	display: none;
 	width: inherit;
 	height: auto;
-	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
@@ -87,6 +88,7 @@ body {
 	height: auto;
 	display: flex;
 	align-items: center;
+	cursor: pointer;
 }
 
 #main-menu>section>.logo :first-child {
@@ -241,6 +243,7 @@ section#pick-player input:not(:checked)+div .circle {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	cursor: pointer;
 	/* background: white; */
 	/* padding: 0 2px 1px 0; */
 }
@@ -312,6 +315,7 @@ section#pick-player input:not(:checked)+div .circle {
 	background-color: var(--beau-blue);
 	width: 0.55em;
 	height: 0.12em;
+	margin: 5px 0 8px 0;
 }
 
 #game-c>.controls>.turn span {
@@ -394,11 +398,13 @@ section#pick-player input:not(:checked)+div .circle {
 	flex-flow: row wrap;
 	justify-content: center;
 	align-items: stretch;
+	padding: 10px 0 0 0;
 }
 
 #game-c>.board>div {
 	flex-grow: 1;
 	flex-basis: calc(26% - 10px);
+	height: 30%;
 	display: inline-flex;
 	justify-content: center;
 	align-items: center;
@@ -417,7 +423,7 @@ section#pick-player input:not(:checked)+div .circle {
 
 /* fix margin of button's in board */
 #game-c>.board {
-	padding: 0.25rem 0 0 0.25rem;
+	/* padding: 0.25rem 0 0 0.25rem; */
 }
 
 #game-c>.board> :nth-child(1),
@@ -445,6 +451,114 @@ section#pick-player input:not(:checked)+div .circle {
 }
 
 /* ========================== /board ============================ */
+
+/* ========================== cross&circle ============================ */
+
+/* ------------ icon of button's in board ------------ */
+/* circle icon */
+svg {
+	display: inline-flex;
+	margin: 0;
+	width: 100%;
+	height: auto;
+	justify-content: center;
+	align-items: center;
+	transform: rotate(-90deg);
+	animation: progress-circle-svg 2s ease 0s 1 alternate forwards;
+	pointer-events: none;
+}
+
+svg .progress {
+	pointer-events: none;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+	r: 20%;
+	cx: 50%;
+	cy: 50%;
+	fill: none;
+	stroke: url(#linear);
+	stroke-width: 12px;
+	stroke-dasharray: 1010px;
+	stroke-dashoffset: 1010px;
+	stroke-linecap: round;
+	animation: progress-circle 12s ease 0s 1 alternate forwards;
+}
+
+@keyframes progress-circle-svg {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes progress-circle {
+	0% {
+		stroke-dashoffset: 1010px;
+	}
+
+	100% {
+		stroke-dashoffset: 0px;
+	}
+}
+
+/* cross icon */
+#game-c .board>div .crossline {
+	width: 60%;
+	height: 10px;
+	background: var(--maximum-yellow-red);
+	transform: rotate(45deg);
+	border-radius: 50px;
+	position: absolute;
+	cursor: pointer;
+	pointer-events: none;
+}
+
+#game-c .board>div .crossline-2 {
+	transform: rotate(135deg);
+}
+
+#game-c .board>div .crossline-1 {
+	pointer-events: none;
+	animation: crossline-1-animation 2s ease 0s 1 alternate forwards;
+}
+
+#game-c .board>div .crossline-2 {
+	pointer-events: none;
+	animation: crossline-2-animation 2s ease 0s 1 alternate forwards;
+}
+
+@keyframes crossline-1-animation {
+	0% {
+		background: transparent;
+		transform: rotate(-360deg);
+	}
+
+	100% {
+		background: var(--maximum-blue-green);
+		transform: rotate(45deg);
+	}
+}
+
+@keyframes crossline-2-animation {
+	0% {
+		background: transparent;
+		transform: rotate(-360deg);
+	}
+
+	100% {
+		background: #0ef;
+		transform: rotate(135deg);
+	}
+}
+
+/* ========================== /cross&circle ============================ */
+
 /* ========================== scores ============================ */
 #game-c>.scores {
 	display: flex;
@@ -566,6 +680,7 @@ section#pick-player input:not(:checked)+div .circle {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	z-index: 2;
 }
 
 #win-state-pane p {
@@ -582,7 +697,7 @@ section#pick-player input:not(:checked)+div .circle {
 	height: 20%;
 	display: flex;
 	justify-content: center;
-	align-items: center; 
+	align-items: center;
 	margin: 20px 0;
 	text-transform: uppercase;
 }
@@ -642,9 +757,46 @@ section#pick-player input:not(:checked)+div .circle {
 
 
 /* ################################### /win-state-pane ################################## */
+/* ################################### msg full screen ################################## */
+.msgBox {
+	position: absolute;
+	top: 30px;
+	width: auto;
+	height: auto;
+	background: rgba(255, 255, 255, .1);
+	padding: 10px;
+	z-index: 2;
+	text-transform: uppercase;
+	font-weight: bold;
+	color: #fff;
+	border-radius: 8px;
+	opacity: 0;
+	animation: show-msg 5s linear 1s 1 reverse forwards;
+}
+
+@keyframes show-msg {
+	0% {
+		opacity: 0;
+		z-index: -1;
+	} 
+	25% {
+		opacity: .25; 
+	} 
+	50% {
+		opacity: .5; 
+	} 
+	75% {
+		opacity: .75; 
+	}
+	100% {
+		opacity: 1; 
+	}
+}
+
+/* ################################### /msg full screen ################################## */
 
 /* ################################### MEDIA QUERY ################################## */
-/* ========================= portrait mode ============================= */ 
+/* ========================= portrait mode ============================= */
 @media only all and (min-width: 0px) {
 	#wrapper {
 		width: 100%;
