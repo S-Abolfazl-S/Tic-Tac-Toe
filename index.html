@@ -18,8 +18,8 @@
 <body>
     <div id="wrapper">
         <section id="main-container">
-            <!--################################### game-c #################################-->
-            <div id="game-c">
+            <!--################################### game-page #################################-->
+            <div id="game-page">
                 <!--========================== start controls ===========================-->
                 <div class="controls">
                     <div class="logo">
@@ -92,7 +92,7 @@
                             </label>
                         </div>
                     </section>
-                    <h5>remember : x goes first</h5>
+                    <h5>remember : <span>x</span> goes first</h5>
                 </section>
                 <!--  -->
                 <section id="versus">
@@ -110,8 +110,8 @@
                 <button id="home">home</button>
             </div>
         </section>
-        <!--################################## win state pane ##################################-->
-        <section id="win-state-pane">
+        <!--################################## win pane ##################################-->
+        <section id="win-pane">
             <p>you won!</p>
             <div>
                 <div class="cross"></div>
@@ -129,11 +129,15 @@
     </div>
 
     <!-- sound's -->
-    <audio id="press-btn1-audio" src="./assets/sounds/press_btn_1.wav" style="display: none;"></audio>
-    <audio id="press-btn2-audio" src="./assets/sounds/press_btn_2.mp3" style="display: none;"></audio>
-    <audio id="press-btn3-audio" src="./assets/sounds/press_btn_3.mp3" style="display: none;"></audio>
-    <audio id="win-state-audio" src="./assets/sounds/win_state.wav" style="display: none;"></audio>
-    <!-- script's link's -->
+    <audio id="audio_1" src="./assets/sounds/audio_1.mp3" style="display: none;" controls controlsList="nodownload"></audio>
+    <audio id="audio_2" src="./assets/sounds/audio_2.mp3" style="display: none;" controls controlsList="nodownload"></audio>
+    <audio id="audio_3" src="./assets/sounds/audio_3.mp3" style="display: none;" controls controlsList="nodownload"></audio>
+    <!-- <style>
+        audio::-internal-media-controls-download-button {
+            display: none;
+        }
+    </style> -->
+    <!-- script link's -->
     <script type="text/javascript" src="src/script.js"></script>
 </body>
 

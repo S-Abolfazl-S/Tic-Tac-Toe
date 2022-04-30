@@ -147,6 +147,7 @@ section#pick-player h3 {
 	font-weight: bold;
 }
 
+section#pick-player h5>span,
 section#pick-player h5 {
 	font-size: 13px;
 	color: #5e747f;
@@ -227,9 +228,9 @@ section#pick-player input:not(:checked)+div .circle {
 /* =========================== /versus =========================== */
 /* ################################### /main-menu ################################## */
 
-/* ################################### game-c ################################## */
+/* ################################### game-page ################################## */
 /* ========================== controls ============================ */
-#game-c>.controls {
+#game-page>.controls {
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-start;
@@ -237,7 +238,7 @@ section#pick-player input:not(:checked)+div .circle {
 }
 
 /* ~~~~~~~~~~~~~~~~~~ logo ~~~~~~~~~~~~~~~~~~~~~ */
-#game-c>.controls>.logo {
+#game-page>.controls>.logo {
 	width: auto;
 	height: auto;
 	display: flex;
@@ -288,7 +289,7 @@ section#pick-player input:not(:checked)+div .circle {
 /* ~~~~~~~~~~~~~~~~~~ /logo ~~~~~~~~~~~~~~~~~~~~~ */
 
 /* ~~~~~~~~~~~~~~~~~~ turn ~~~~~~~~~~~~~~~~~~~~~ */
-#game-c>.controls>.turn {
+#game-page>.controls>.turn {
 	width: auto;
 	height: 2em;
 	display: flex;
@@ -303,22 +304,22 @@ section#pick-player input:not(:checked)+div .circle {
 }
 
 /* ----------- turn content ------------- */
-#game-c>.controls>.turn>.circle {
+#game-page>.controls>.turn>.circle {
 	border-color: var(--beau-blue);
 	width: 16px;
 	height: 16px;
 	font-size: 0.5em;
 }
 
-#game-c>.controls>.turn>.cross::after,
-#game-c>.controls>.turn>.cross::before {
+#game-page>.controls>.turn>.cross::after,
+#game-page>.controls>.turn>.cross::before {
 	background-color: var(--beau-blue);
 	width: 0.55em;
 	height: 0.12em;
 	margin: 5px 0 8px 0;
 }
 
-#game-c>.controls>.turn span {
+#game-page>.controls>.turn span {
 	margin-left: 5px;
 	text-transform: uppercase;
 	color: var(--beau-blue);
@@ -328,7 +329,7 @@ section#pick-player input:not(:checked)+div .circle {
 
 /* ~~~~~~~~~~~~~~~~~~ /turn ~~~~~~~~~~~~~~~~~~~~~ */
 /* ~~~~~~~~~~~~~~~~~~ reset-btn ~~~~~~~~~~~~~~~~~~~~~ */
-#game-c>.controls>.reset-btn {
+#game-page>.controls>.reset-btn {
 	width: 2em;
 	height: 2em;
 	font-size: 16px;
@@ -385,7 +386,7 @@ section#pick-player input:not(:checked)+div .circle {
 
 /* ~~~~~~~~~~~~~~~~~~ /arrow redo icon ~~~~~~~~~~~~~~~~~~~~~ */
 
-#game-c>.controls>.reset-btn:active {
+#game-page>.controls>.reset-btn:active {
 	box-shadow: 0 0 0 transparent;
 	transform: translate(0, 0);
 }
@@ -393,7 +394,7 @@ section#pick-player input:not(:checked)+div .circle {
 /* ~~~~~~~~~~~~~~~~~~ /reset-btn ~~~~~~~~~~~~~~~~~~~~~ */
 /* ========================== /controls ============================ */
 /* ========================== board ============================ */
-#game-c>.board {
+#game-page>.board {
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: center;
@@ -401,7 +402,7 @@ section#pick-player input:not(:checked)+div .circle {
 	padding: 10px 0 0 0;
 }
 
-#game-c>.board>div {
+#game-page>.board>div {
 	flex-grow: 1;
 	flex-basis: calc(26% - 10px);
 	height: 30%;
@@ -416,37 +417,37 @@ section#pick-player input:not(:checked)+div .circle {
 	cursor: pointer;
 }
 
-#game-c .board>div:active {
+#game-page .board>div:active {
 	box-shadow: none;
 	transform: translate(0, 0);
 }
 
 /* fix margin of button's in board */
-#game-c>.board {
+#game-page>.board {
 	/* padding: 0.25rem 0 0 0.25rem; */
 }
 
-#game-c>.board> :nth-child(1),
-#game-c>.board> :nth-child(2),
-#game-c>.board> :nth-child(3) {
+#game-page>.board> :nth-child(1),
+#game-page>.board> :nth-child(2),
+#game-page>.board> :nth-child(3) {
 	margin-top: 0;
 }
 
-#game-c>.board> :nth-child(7),
-#game-c>.board> :nth-child(8),
-#game-c>.board> :nth-child(9) {
+#game-page>.board> :nth-child(7),
+#game-page>.board> :nth-child(8),
+#game-page>.board> :nth-child(9) {
 	margin-bottom: 0;
 }
 
-#game-c>.board> :nth-child(3),
-#game-c>.board> :nth-child(6),
-#game-c>.board> :nth-child(9) {
+#game-page>.board> :nth-child(3),
+#game-page>.board> :nth-child(6),
+#game-page>.board> :nth-child(9) {
 	margin-right: 0;
 }
 
-#game-c>.board> :nth-child(1),
-#game-c>.board> :nth-child(4),
-#game-c>.board> :nth-child(7) {
+#game-page>.board> :nth-child(1),
+#game-page>.board> :nth-child(4),
+#game-page>.board> :nth-child(7) {
 	margin-left: 0px;
 }
 
@@ -508,7 +509,7 @@ svg .progress {
 }
 
 /* cross icon */
-#game-c .board>div .crossline {
+#game-page .board>div .crossline {
 	width: 60%;
 	height: 10px;
 	background: var(--maximum-yellow-red);
@@ -519,16 +520,16 @@ svg .progress {
 	pointer-events: none;
 }
 
-#game-c .board>div .crossline-2 {
+#game-page .board>div .crossline-2 {
 	transform: rotate(135deg);
 }
 
-#game-c .board>div .crossline-1 {
+#game-page .board>div .crossline-1 {
 	pointer-events: none;
 	animation: crossline-1-animation 2s ease 0s 1 alternate forwards;
 }
 
-#game-c .board>div .crossline-2 {
+#game-page .board>div .crossline-2 {
 	pointer-events: none;
 	animation: crossline-2-animation 2s ease 0s 1 alternate forwards;
 }
@@ -560,7 +561,7 @@ svg .progress {
 /* ========================== /cross&circle ============================ */
 
 /* ========================== scores ============================ */
-#game-c>.scores {
+#game-page>.scores {
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
@@ -568,7 +569,7 @@ svg .progress {
 	padding: 20px 2px 0 2px;
 }
 
-#game-c>.scores>div {
+#game-page>.scores>div {
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
@@ -581,25 +582,25 @@ svg .progress {
 	padding: 10px;
 }
 
-#game-c>.scores>div>span:nth-child(2) {
+#game-page>.scores>div>span:nth-child(2) {
 	font-weight: bold;
 }
 
-#game-c .scores div:nth-child(1) {
+#game-page .scores div:nth-child(1) {
 	background-color: var(--maximum-blue-green);
 }
 
-#game-c .scores div:nth-child(2) {
+#game-page .scores div:nth-child(2) {
 	background-color: var(--beau-blue);
 	margin: 0 20px;
 }
 
-#game-c .scores div:nth-child(3) {
+#game-page .scores div:nth-child(3) {
 	background-color: var(--maximum-yellow-red);
 }
 
 /* ========================== /scores ============================ */
-/* ################################### /game-c ################################## */
+/* ################################### /game-page ################################## */
 
 /* ################################### reset-pane ################################## */
 #reset-pane {
@@ -670,8 +671,8 @@ svg .progress {
 }
 
 /* ################################### /reset-pane ################################## */
-/* ################################### win-state-pane ################################## */
-#win-state-pane {
+/* ################################### win-pane ################################## */
+#win-pane {
 	position: absolute;
 	width: 100vw;
 	height: 200px;
@@ -683,7 +684,7 @@ svg .progress {
 	z-index: 2;
 }
 
-#win-state-pane p {
+#win-pane p {
 	width: 100%;
 	text-align: center;
 	text-transform: uppercase;
@@ -692,7 +693,7 @@ svg .progress {
 	font-weight: bold;
 }
 
-#win-state-pane> :nth-child(2) {
+#win-pane> :nth-child(2) {
 	width: 100%;
 	height: 20%;
 	display: flex;
@@ -702,16 +703,16 @@ svg .progress {
 	text-transform: uppercase;
 }
 
-#win-state-pane> :nth-child(2) h1 {
+#win-pane> :nth-child(2) h1 {
 	font-size: 1.5rem;
 	color: var(--maximum-blue-green);
 }
 
-#win-state-pane> :nth-child(2) div {
+#win-pane> :nth-child(2) div {
 	margin-right: 5px;
 }
 
-#win-state-pane> :nth-child(3) {
+#win-pane> :nth-child(3) {
 	width: 100%;
 	display: flex;
 	justify-content: center;
@@ -719,11 +720,11 @@ svg .progress {
 	padding: 0 5px;
 }
 
-#win-state-pane> :nth-child(3) button:first-child {
+#win-pane> :nth-child(3) button:first-child {
 	margin-right: 10px;
 }
 
-#win-state-pane> :nth-child(3) button {
+#win-pane> :nth-child(3) button {
 	width: auto;
 	height: 100%;
 	text-transform: uppercase;
@@ -735,28 +736,28 @@ svg .progress {
 	font-weight: bold;
 }
 
-#win-state-pane> :nth-child(3) button:nth-child(1) {
+#win-pane> :nth-child(3) button:nth-child(1) {
 	background: var(--beau-blue);
 	box-shadow: 0 5px 0 #6F8A93;
 }
 
-#win-state-pane> :nth-child(3) button:nth-child(2) {
+#win-pane> :nth-child(3) button:nth-child(2) {
 	background: var(--maximum-yellow-red);
 	box-shadow: 0 5px 0 #9E813B;
 }
 
-#win-state-pane> :nth-child(3) button:nth-child(1):active {
+#win-pane> :nth-child(3) button:nth-child(1):active {
 	box-shadow: none;
 	transform: translateY(5px);
 }
 
-#win-state-pane> :nth-child(3) button:nth-child(2):active {
+#win-pane> :nth-child(3) button:nth-child(2):active {
 	box-shadow: none;
 	transform: translateY(5px);
 }
 
 
-/* ################################### /win-state-pane ################################## */
+/* ################################### /win-pane ################################## */
 /* ################################### msg full screen ################################## */
 .msgBox {
 	position: absolute;
@@ -778,18 +779,22 @@ svg .progress {
 	0% {
 		opacity: 0;
 		z-index: -1;
-	} 
-	25% {
-		opacity: .25; 
-	} 
-	50% {
-		opacity: .5; 
-	} 
-	75% {
-		opacity: .75; 
 	}
+
+	25% {
+		opacity: .25;
+	}
+
+	50% {
+		opacity: .5;
+	}
+
+	75% {
+		opacity: .75;
+	}
+
 	100% {
-		opacity: 1; 
+		opacity: 1;
 	}
 }
 
@@ -823,8 +828,8 @@ svg .progress {
 	}
 
 	/* ~~~~~~~~~~~~~~~~~~ /main-menu ~~~~~~~~~~~~~~~~~~~~~ */
-	/* ~~~~~~~~~~~~~~~~~~ game-c ~~~~~~~~~~~~~~~~~~~~~ */
-	#game-c {
+	/* ~~~~~~~~~~~~~~~~~~ game-page ~~~~~~~~~~~~~~~~~~~~~ */
+	#game-page {
 		width: inherit;
 		height: inherit;
 		display: none;
@@ -835,49 +840,49 @@ svg .progress {
 		padding: 0 5px;
 	}
 
-	#game-c>.controls,
-	#game-c>.scores {
+	#game-page>.controls,
+	#game-page>.scores {
 		width: 100%;
 		height: 10%;
 		flex-grow: 1;
 	}
 
-	#game-c>.board {
+	#game-page>.board {
 		width: 100%;
 		height: 100vw;
 		flex-grow: 0;
 	}
 
-	/* ~~~~~~~~~~~~~~~~~~ end game-c ~~~~~~~~~~~~~~~~~~~~~ */
+	/* ~~~~~~~~~~~~~~~~~~ end game-page ~~~~~~~~~~~~~~~~~~~~~ */
 }
 
 @media only all and (max-width: 260px) {
-	#game-c>.controls>.logo {
+	#game-page>.controls>.logo {
 		display: none;
 	}
 
-	#game-c>.scores {
+	#game-page>.scores {
 		flex-direction: column;
 		justify-content: flex-start;
 		align-content: space-between;
 	}
 
-	#game-c>.scores>div:nth-child(2) {
+	#game-page>.scores>div:nth-child(2) {
 		margin: 10px 0;
 	}
 }
 
 @media only all and (min-width: 350px) and (max-width: 400px) {
-	#game-c>.controls {
+	#game-page>.controls {
 		padding-top: 30px;
 	}
 
-	#game-c>.scores {
+	#game-page>.scores {
 		padding: 0;
 		padding-bottom: 10px;
 	}
 
-	#game-c>.board {
+	#game-page>.board {
 		margin: 20px 0;
 	}
 }
@@ -892,26 +897,26 @@ svg .progress {
 		width: 400px;
 	}
 
-	/* ~~~~~~~~~~~~~~~~~~ game-c ~~~~~~~~~~~~~~~~~~~~~ */
-	#game-c {
+	/* ~~~~~~~~~~~~~~~~~~ game-page ~~~~~~~~~~~~~~~~~~~~~ */
+	#game-page {
 		width: 100%;
 		padding: 0;
 	}
 
-	#game-c>.controls {
+	#game-page>.controls {
 		align-items: flex-end;
 	}
 
-	#game-c>.controls>.turn {
+	#game-page>.controls>.turn {
 		width: 26%;
 	}
 
-	#game-c>.board {
+	#game-page>.board {
 		width: 100%;
 		height: 400px;
 	}
 
-	/* ~~~~~~~~~~~~~~~~~~ end game-c ~~~~~~~~~~~~~~~~~~~~~ */
+	/* ~~~~~~~~~~~~~~~~~~ end game-page ~~~~~~~~~~~~~~~~~~~~~ */
 }
 
 /* ========================= landscape mode ============================= */
@@ -934,15 +939,15 @@ svg .progress {
 	}
 
 	/* ~~~~~~~~~~~~~~~~~~ /main-menu ~~~~~~~~~~~~~~~~~~~~~ */
-	/* ~~~~~~~~~~~~~~~~~~ game-c ~~~~~~~~~~~~~~~~~~~~~ */
-	#game-c {
+	/* ~~~~~~~~~~~~~~~~~~ game-page ~~~~~~~~~~~~~~~~~~~~~ */
+	#game-page {
 		width: 100%;
 		flex-direction: row;
 		padding: 0 20px;
 	}
 
-	#game-c>.controls,
-	#game-c>.scores {
+	#game-page>.controls,
+	#game-page>.scores {
 		width: 10%;
 		height: 100%;
 		flex-direction: column-reverse;
@@ -951,11 +956,11 @@ svg .progress {
 		padding: 3px 0;
 	}
 
-	#game-c>.controls>.reset-btn {
+	#game-page>.controls>.reset-btn {
 		margin-top: 2px;
 	}
 
-	#game-c>.controls>.turn {
+	#game-page>.controls>.turn {
 		width: auto;
 		height: auto;
 		margin: 0;
@@ -965,27 +970,27 @@ svg .progress {
 		flex-wrap: wrap;
 	}
 
-	#game-c>.scores {
+	#game-page>.scores {
 		align-items: stretch;
 		padding-right: 20px;
 	}
 
-	#game-c>.scores>div {
+	#game-page>.scores>div {
 		max-width: 100px;
 		padding: 0 10px;
 	}
 
-	#game-c>.scores>div:nth-child(2) {
+	#game-page>.scores>div:nth-child(2) {
 		margin: 20px 0;
 	}
 
-	#game-c>.board {
+	#game-page>.board {
 		width: 80vh;
 		height: 100%;
 		margin: 0 10px;
 	}
 
-	/* ~~~~~~~~~~~~~~~~~~ end game-c ~~~~~~~~~~~~~~~~~~~~~ */
+	/* ~~~~~~~~~~~~~~~~~~ end game-page ~~~~~~~~~~~~~~~~~~~~~ */
 }
 
 @media only all and (orientation: landscape) and (min-width: 850px) and (max-width: 1024px) and (max-height: 560px),
@@ -1000,14 +1005,14 @@ svg .progress {
 		height: 95vh;
 	}
 
-	/* ~~~~~~~~~~~~~~~~~~ game-c ~~~~~~~~~~~~~~~~~~~~~ */
-	#game-c {
+	/* ~~~~~~~~~~~~~~~~~~ game-page ~~~~~~~~~~~~~~~~~~~~~ */
+	#game-page {
 		width: 100%;
 		flex-direction: row;
 	}
 
-	#game-c>.controls,
-	#game-c>.scores {
+	#game-page>.controls,
+	#game-page>.scores {
 		width: auto;
 		height: 100%;
 		flex-direction: column-reverse;
@@ -1015,37 +1020,37 @@ svg .progress {
 		padding: 3px 0;
 	}
 
-	#game-c>.controls>.reset-btn {
+	#game-page>.controls>.reset-btn {
 		margin-top: 2px;
 	}
 
-	#game-c>.controls>.turn {
+	#game-page>.controls>.turn {
 		width: auto;
 		margin: 0;
 		margin-left: 10px;
 	}
 
-	#game-c>.scores {
+	#game-page>.scores {
 		align-items: stretch;
 		padding-right: 20px;
 	}
 
-	#game-c>.scores>div {
+	#game-page>.scores>div {
 		max-width: 150px;
 		padding: 0 10px;
 	}
 
-	#game-c>.scores>div:nth-child(2) {
+	#game-page>.scores>div:nth-child(2) {
 		margin: 20px 0;
 	}
 
-	#game-c>.board {
+	#game-page>.board {
 		width: 95vh;
 		height: 100%;
 		margin: 0 20px;
 	}
 
-	/* ~~~~~~~~~~~~~~~~~~ end game-c ~~~~~~~~~~~~~~~~~~~~~ */
+	/* ~~~~~~~~~~~~~~~~~~ end game-page ~~~~~~~~~~~~~~~~~~~~~ */
 }
 
 /* ################################### END MEDIA QUERY ################################## */
